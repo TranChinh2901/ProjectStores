@@ -13,6 +13,7 @@ public class Product {
     private String tragop;
     private String name;
     private String image;
+    private String img_detail;
     private double pricesgoc;
     private double prices;
     private String danhgia;
@@ -20,6 +21,15 @@ public class Product {
     @Column(columnDefinition = "TEXT")
     private String description;
     private String baiviet;
+
+
+    public String getImg_detail() {
+        return img_detail;
+    }
+
+    public void setImg_detail(String img_detail) {
+        this.img_detail = img_detail;
+    }
 
     // Getter và Setter
     public int getId() {
