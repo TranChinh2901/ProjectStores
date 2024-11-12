@@ -1,7 +1,6 @@
 package com.example.mobile_stores.models;
 
 import jakarta.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name = "products")
@@ -21,7 +20,6 @@ public class Product {
     @Column(columnDefinition = "TEXT")
     private String description;
     private String baiviet;
-
 
     public String getImg_detail() {
         return img_detail;

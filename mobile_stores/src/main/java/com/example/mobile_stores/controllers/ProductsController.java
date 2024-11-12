@@ -20,29 +20,42 @@ public class ProductsController {
         List<Product> products = repo.findAll();
         model.addAttribute("products", products);
         return "products/index";
-    };
+    }
 
-    @GetMapping("/product")
-    public String showProductList(Model model) {
+    @GetMapping("/banchay")
+    public String banchayProductList(Model model) {
         List<Product> products = repo.findAll();
         model.addAttribute("products", products);
-        return "products/product";
-    };
+        return "products/banchay";
+    }
 
     @GetMapping("/cart")
     public String cartProductList(Model model) {
         List<Product> products = repo.findAll();
         model.addAttribute("products", products);
-        System.out.println("Cart page accessed");
         return "products/cart";
-    };
+    }
+
+    @GetMapping("/custom-error")
+    public String errorProductList(Model model) {
+        List<Product> products = repo.findAll();
+        model.addAttribute("products", products);
+        return "products/error";
+    }
+
+    @GetMapping("/showcart")
+    public String showProductList(Model model) {
+        List<Product> products = repo.findAll();
+        model.addAttribute("products", products);
+        return "products/showcart";
+    }
 
     @GetMapping("/tintuc")
     public String tintucProductList(Model model) {
         List<Product> products = repo.findAll();
         model.addAttribute("products", products);
         return "products/tintuc";
-    };
+    }
 
     @GetMapping("/xemthem/{id}")
     public String showProductDetails(@PathVariable("id") Long productId, Model model) {
@@ -51,4 +64,11 @@ public class ProductsController {
         return "products/xemthem";
     }
 
-};
+    @GetMapping("/cart/{id}")
+    public String cartProductDetails(@PathVariable("id") Long productId, Model model) {
+        Product product = repo.findById(productId).orElse(null);
+        model.addAttribute("product", product);
+        return "products/cart";
+    }
+
+}

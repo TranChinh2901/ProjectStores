@@ -66,10 +66,12 @@
               <a href="" style="text-decoration: none; color: black;" class="mb-2">Trang chủ</a>
             </li>
             <li class="nav-item d-flex  ms-2 me-1">
-              <a class="nav-link active me-1" href="#">
+              <a class="nav-link active me-1" href="/banchay">
                 <i class="fa-regular fa-newspaper"></i>
               </a>
-              <p class="mb-2">tin tức</p>
+              <a href="/banchay" style="text-decoration: none;">
+                <p class="mb-2" style="text-decoration: none; color: black;">Bán chạy</p>
+              </a>
             </li>
             <li class=" nav-item dropdown ms-3 mt-2 me-2">
               <a>
@@ -190,8 +192,8 @@
               <a class="nav-link active" href="">
                 <i class="fa-solid fa-cart-shopping"></i>
               </a>
-              <a href="/cart" class="mb-2" style="color: black; text-decoration: none;">Giỏ hàng <span id="cart-count"
-                  class="badge bg-danger ms-1">0</span></a>
+              <a href="/showcart" class="mb-2" style="color: black; text-decoration: none;">Giỏ hàng <span
+                  id="cart-count" class="badge bg-danger ms-1">0</span></a>
 
             </li>
             </ul>
@@ -202,7 +204,7 @@
   </header>
   <br>
   <br>
-  
+
   <div class="container" id="container-slide">
     <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-inner">
@@ -265,7 +267,7 @@
     <div class="row text-center">
       <div class="col-3 mt-3" th:each="product, iterStat : ${products}">
         <div class="card" style="width: 100%;">
-          <p class="position">Trả góp 0%</p>
+          <p class="position" th:text="${product.tragop}"></p>
           <img th:src="@{'/images/imageProducts/' + ${product.image}}" class="card-img-top" alt="..."
             style="width: 80%; text-align: center; margin-left: 30px; margin-top: 20px;">
           <div class="card-body">
